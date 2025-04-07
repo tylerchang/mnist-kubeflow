@@ -9,10 +9,7 @@
 
 ### Create GKE Cluster
 ```bash
-gcloud container clusters create kubeflow-cluster \
-    --machine-type n1-standard-4 \
-    --num-nodes 2 \
-    --zone us-central1-a
+gcloud container clusters create kubeflow-cluster --machine-type n1-standard-4 --num-nodes 2 --zone us-central1-a
 ```
 
 Get credentials to interact with the cluster
@@ -91,12 +88,14 @@ kubectl apply -f inference-service.yaml
 kubectl get service mnist-inference-service
 ```
 
+Enter the external URL into the web browser to access the application. The `sample digits` directory provides some testing images for use.
+
 # Screen Captures
 ![Alt text for image](screenshots/sc-1.png)
 ![Alt text for image](screenshots/sc-2.png)
 ![Alt text for image](screenshots/sc-3.png)
 
-# Shutting Down the MNIST Kubeflow Deployment
+# Shutting Down Safely
 
 ### Delete Inference Resources
 ```bash
