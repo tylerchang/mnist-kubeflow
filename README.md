@@ -91,6 +91,11 @@ kubectl apply -f inference-service.yaml
 kubectl get service mnist-inference-service
 ```
 
+# Screen Captures
+![Alt text for image](screenshots/sc-1.png)
+![Alt text for image](screenshots/sc-2.png)
+![Alt text for image](screenshots/sc-3.png)
+
 # Shutting Down the MNIST Kubeflow Deployment
 
 ### Delete Inference Resources
