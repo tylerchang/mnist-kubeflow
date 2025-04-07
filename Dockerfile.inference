@@ -1,0 +1,15 @@
+FROM tensorflow/tensorflow:2.10.0
+
+WORKDIR /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir flask pillow numpy
+
+# Copy the application code
+COPY app.py .
+
+# Expose port 8080
+EXPOSE 8080
+
+# Command to run when container starts
+CMD ["python", "app.py"]

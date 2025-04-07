@@ -1,0 +1,12 @@
+FROM tensorflow/tensorflow:2.10.0
+
+WORKDIR /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir numpy pillow
+
+# Copy training script
+COPY train.py .
+
+# Command to run when container starts
+CMD ["python", "train.py"]

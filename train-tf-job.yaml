@@ -1,0 +1,23 @@
+apiVersion: kubeflow.org/v1
+kind: TFJob
+metadata:
+  name: mnist-tfjob
+spec:
+  runPolicy:
+    cleanPodPolicy: OnCompletion
+  tfReplicaSpecs:
+    Worker:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        spec:
+          containers:
+          - name: tensorflow
+            image: gcr.io/rosy-precinct-449422-d1/mnist-training:latest
+            volumeMounts:
+            - name: model-storage
+              mountPath: /models
+          volumes:
+          - name: model-storage
+            persistentVolumeClaim:
+              claimName: mnist-model-pvc
