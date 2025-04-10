@@ -1,5 +1,4 @@
 FROM tensorflow/tensorflow:2.10.0
-
 WORKDIR /app
 
 # Install Python dependencies
@@ -7,6 +6,10 @@ RUN pip install --no-cache-dir flask pillow numpy
 
 # Copy the application code
 COPY app.py .
+
+# Create templates directory and copy HTML file
+RUN mkdir -p templates
+COPY templates/index.html templates/
 
 # Expose port 8080
 EXPOSE 8080

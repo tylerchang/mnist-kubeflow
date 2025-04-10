@@ -35,7 +35,7 @@ kubectl apply --server-side -k "github.com/kubeflow/training-operator.git/manife
 # Navigate to project directory
 # Set your Google Cloud project ID
 export PROJECT_ID=[GCP PROJECT ID]
-export GCR_PATH=gcr.io/[GCP PROJECT ID]
+export GCR_PATH=gcr.io/$PROJECT_ID
 ```
 
 ### Docker Authentication
@@ -44,6 +44,7 @@ gcloud auth configure-docker
 ```
 
 ### PVC Setup
+Creates a PVC called `mnist-model-pvc` through the yaml file
 ```bash
 kubectl apply -f pvc.yaml
 ```

@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import os
 
-# Set model save path (this will be mounted as a volume in Kubernetes)
+# Set model save path
 MODEL_SAVE_PATH = "/models/mnist_model"
 
 # Load and preprocess MNIST dataset
@@ -11,12 +11,10 @@ x_train = x_train.astype('float32') / 255.0
 x_test = x_test.astype('float32') / 255.0
 x_train = np.expand_dims(x_train, -1)
 x_test = np.expand_dims(x_test, -1)
-
-# Convert class vectors to binary class matrices
 y_train = tf.keras.utils.to_categorical(y_train, 10)
 y_test = tf.keras.utils.to_categorical(y_test, 10)
 
-# Define a simple CNN model
+# Define CNN model
 model = tf.keras.Sequential([
     tf.keras.layers.Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1)),
     tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
@@ -28,7 +26,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Dense(10, activation='softmax')
 ])
 
-# Compile the model
+# Compile model
 model.compile(loss=tf.keras.losses.categorical_crossentropy,
               optimizer=tf.keras.optimizers.Adam(),
               metrics=['accuracy'])
