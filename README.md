@@ -8,13 +8,14 @@
 ## Setup and Deployment Steps
 
 ### Create GKE Cluster
+The following will create a cluster called `kubeflow-cluster`. May need to change region/zone based on availability.
 ```bash
 gcloud container clusters create kubeflow-cluster --machine-type n1-standard-4 --num-nodes 2 --zone us-central1-a
 ```
 
 Get credentials to interact with the cluster
 ```bash
-gcloud container clusters get-credentials mnist-kubeflow-cluster --zone us-central1-a
+gcloud container clusters get-credentials kubeflow-cluster --zone us-central1-a
 ```
 
 ### Install Kubernetes Controller
