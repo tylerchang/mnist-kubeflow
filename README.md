@@ -93,9 +93,9 @@ kubectl get service mnist-inference-service
 Enter the external URL into the web browser to access the application. The `sample digits` directory provides some testing images for use.
 
 # Screen Captures
-![Alt text for image](screenshots/sc-1.png)
-![Alt text for image](screenshots/sc-2.png)
-![Alt text for image](screenshots/sc-3.png)
+![Alt text for image](screenshots/1.png)
+![Alt text for image](screenshots/2.png)
+![Alt text for image](screenshots/3.png)
 
 # Shutting Down Safely
 
