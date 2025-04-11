@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
           - name: tensorflow
-            image: gcr.io/rosy-precinct-449422-d1/mnist-training:latest
+            image: gcr.io/<PROJECT_ID>/mnist-training:latest
             volumeMounts:
             - name: model-storage
               mountPath: /models

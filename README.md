@@ -1,5 +1,7 @@
 # MNIST Project Kubeflow Deployment Guide
 
+This project implements a deep learning workflow for MNIST digit recognition using Kubeflow on Google’s Kubernetes Engine (GKE).
+
 ## Prerequisites
 - Google Cloud SDK
 - Docker
@@ -37,6 +39,12 @@ kubectl apply --server-side -k "github.com/kubeflow/training-operator.git/manife
 export PROJECT_ID=[GCP PROJECT ID]
 export GCR_PATH=gcr.io/$PROJECT_ID
 ```
+
+Also navigate to `inference-deployment.yaml` and `train-tf-job.yaml`, and look for:
+```bash
+image: gcr.io/<PROJECT_ID>/mnist-inference:latest
+```
+Change `<PROJECT_ID>` in both files to your own from Google Cloud.
 
 ### Docker Authentication
 ```bash

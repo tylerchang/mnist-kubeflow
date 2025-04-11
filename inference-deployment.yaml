@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mnist-inference
-        image: gcr.io/rosy-precinct-449422-d1/mnist-inference:latest
+        image: gcr.io/<PROJECT_ID>/mnist-inference:latest
         ports:
         - containerPort: 8080
         resources:
